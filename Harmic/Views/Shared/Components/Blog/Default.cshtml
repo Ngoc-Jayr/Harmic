@@ -1,11 +1,12 @@
-﻿@model IEnumerable<TbBlog>
+﻿@model IEnumerable<Harmic.Models.TbBlog>
 
-@foreach (var item in Model)
+@foreach (var item in Model.Take(3))
 {
+    string sUrl = $"/blog/{item.Alias}-{item.BlogId}.html";
     <div class="swiper-slide">
         <div class="blog-item">
             <div class="blog-img img-zoom-effect">
-                <a href="blog-detail-left-sidebar.html">
+                <a href="@sUrl">
                     <img class="img-full" src="~/assets/images/blog/@item.Image" alt="Blog Image">
                 </a>
             </div>
