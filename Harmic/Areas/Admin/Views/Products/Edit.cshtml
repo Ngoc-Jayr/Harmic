@@ -120,7 +120,12 @@
         </div>
     </section>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+@{
+    var summerNote = new Harmic.Areas.Admin.Models.SummerNote("#Detail");
+    <partial name="_SummerNote" model="summerNote" />
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

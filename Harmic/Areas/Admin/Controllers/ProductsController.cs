@@ -22,8 +22,8 @@ namespace Harmic.Areas.Admin.Controllers
         // GET: Admin/Products
         public async Task<IActionResult> Index()
         {
-            var hamicContext = _context.TbProducts.Include(t => t.CategoryProduct);
-            return View(await hamicContext.ToListAsync());
+            var harmicContext = _context.TbProducts.Include(t => t.CategoryProduct);
+            return View(await harmicContext.ToListAsync());
         }
 
         // GET: Admin/Products/Details/5

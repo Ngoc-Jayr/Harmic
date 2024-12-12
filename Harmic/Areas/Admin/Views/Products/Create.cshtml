@@ -80,7 +80,7 @@
 
                                 <div class="form-group">
                                     <label asp-for="Detail" class="control-label">Chi tiết</label>
-                                    <input asp-for="Detail" class="form-control" />
+                                    <textarea asp-for="Detail" class="form-control"></textarea>
                                     <span asp-validation-for="Detail" class="text-danger"></span>
                                 </div>
 
@@ -119,7 +119,12 @@
         </div>
     </section>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+@{
+    var summerNote = new Harmic.Areas.Admin.Models.SummerNote("#Detail");
+    <partial name="_SummerNote" model="summerNote" />
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
