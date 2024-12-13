@@ -53,7 +53,7 @@
 
                                 <div class="form-group">
                                     <label asp-for="CategoryProductId" class="control-label">Danh mục</label>
-                                    <select asp-for="CategoryProductId" class="form-control" asp-items="ViewBag.CategoryProductId">
+                                    <select asp-for="CategoryProductId" class="form-control">
                                         <option value="0" selected>--[Chọn danh mục]--</option>
                                         @foreach (var category in ViewBag.CategoryProductId)
                                         {
